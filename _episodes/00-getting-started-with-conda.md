@@ -25,7 +25,7 @@ keypoints:
 > $ cd project-dir
 > $ nano environment.yml # describe the environment
 > $ conda env create --prefix ./env --file environment.yml # create the environment
-> $ source activate ./env # activate the environment
+> $ conda activate ./env # activate the environment
 > (/path/to/env) $ nano environment.yml # forgot to add some deps
 > (/path/to/env) $ conda env update --prefix ./env --file environment.yml --prune) # update the environment
 > (/path/to/env) $ conda deactivate # done working on project (for now!)
@@ -170,30 +170,29 @@ Regardless of OS, the output of the command should look similar to the following
 
 ~~~
 $ conda info
-    active environment : base
-   active env location : /Users/<USERNAME>/miniconda3
-           shell level : 1
-      user config file : /Users/<USERNAME>/.condarc
-populated config files : 
-         conda version : 4.6.14
-   conda-build version : not installed
-        python version : 3.7.1.final.0
-      base environment : /Users/<USERNAME>/miniconda3  (writable)
-          channel URLs : https://repo.anaconda.com/pkgs/main/osx-64
-                         https://repo.anaconda.com/pkgs/main/noarch
-                         https://repo.anaconda.com/pkgs/free/osx-64
-                         https://repo.anaconda.com/pkgs/free/noarch
-                         https://repo.anaconda.com/pkgs/r/osx-64
-                         https://repo.anaconda.com/pkgs/r/noarch
-         package cache : /Users/<USERNAME>/miniconda3/pkgs
-                         /Users/<USERNAME>/.conda/pkgs
-      envs directories : /Users/<USERNAME>/miniconda3/envs
-                         /Users/<USERNAME>/.conda/envs
-              platform : osx-64
-            user-agent : conda/4.6.14 requests/2.19.1 CPython/3.7.1 Darwin/18.6.0 OSX/10.14.5
-               UID:GID : 1682265470:1840429327
-            netrc file : None
-          offline mode : False
+     active environment : base
+    active env location : /Users/$USERNAME/miniconda3
+            shell level : 1
+       user config file : /Users/$USERNAME/.condarc
+ populated config files : 
+          conda version : 4.8.3
+    conda-build version : not installed
+         python version : 3.7.6.final.0
+       virtual packages : __osx=10.15.6
+       base environment : /Users/$USERNAME/opt/miniconda3  (writable)
+           channel URLs : https://repo.anaconda.com/pkgs/main/osx-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/osx-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /Users/$USERNAME/opt/miniconda3/pkgs
+                          /Users/$USERNAME/.conda/pkgs
+       envs directories : /Users/$USERNAME/opt/miniconda3/envs
+                          /Users/$USERNAME/.conda/envs
+               platform : osx-64
+             user-agent : conda/4.8.3 requests/2.23.0 CPython/3.7.6 Darwin/19.6.0 OSX/10.15.6
+                UID:GID : 502:20
+             netrc file : None
+           offline mode : False
 ~~~
 {: .language-bash}
 
@@ -202,7 +201,7 @@ return the version number if Conda has been properly installed.
 
 ~~~
 $ conda --version
-conda 4.6.14
+conda 4.8.3
 ~~~
 {: .language-bash}
 
@@ -269,9 +268,9 @@ a `name` for the environment (which can be `null`) followed by our project `depe
 name: python-novice-gapminder-env
 
 dependencies:
-  - python=3.7
-  - matplotlib=3.1
-  - pandas=0.25
+  - python=3.8
+  - matplotlib
+  - pandas
 ~~~
 
 > ## Always specify version numbers for your dependencies!
@@ -344,15 +343,9 @@ environment variables that may be necessary for their operation. On a Unix syste
 environment using the following command.
 
 ~~~
-$ source activate ./env
+$ conda activate ./env
 ~~~
 {: .language-bash}
-
-On Windows the command to activate an environment is slightly different.
-
-~~~
-$ activate ./env
-~~~
 
 You can see that an environment has been activated because the shell prompt will now include the 
 absolute path to the active environment.
@@ -428,10 +421,10 @@ from the environment.
 > > name: python-novice-gapminder-env
 > > 
 > > dependencies:
-> >   - python=3.7
-> >   - jupyerlab=0.35
-> >   - matplotlib=3.1
-> >   - pandas=0.24
+> >   - python=3.8
+> >   - jupyerlab
+> >   - matplotlib
+> >   - pandas
 > > ~~~
 > > 
 > > The following command will update the environment accordingly.
@@ -480,7 +473,7 @@ $
 
 > ## Returning to the `base` environment
 >
-> To simply return to the `base` Conda environment, it's better to call `source activate` with no 
+> To simply return to the `base` Conda environment, it's better to call `conda activate` with no 
 > environment specified, rather than to use `deactivate`. If you run `conda deactivate` from your 
 > `base` environment, you may lose the ability to run `conda` commands at all. **Don't worry if 
 > you encounter this undesirable state! Just start a new shell.**
