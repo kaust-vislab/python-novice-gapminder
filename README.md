@@ -58,7 +58,7 @@ $ cd python-novice-gapminder/
 After cloning the repo you can use the following command to build the environment on your local machine.
 
 ```bash
-$ conda env create --file environment.yml --prefix ./env
+$ conda env create --prefix ./env --file environment.yml 
 ```
 
 ### Running JupyterLab
@@ -66,7 +66,7 @@ $ conda env create --file environment.yml --prefix ./env
 Once the environment has been created, then you can activate it and lauch the JupyterLab server.
 
 ```bash
-$ source activate ./env
+$ conda activate ./env
 $ jupyter lab
 ``` 
 
