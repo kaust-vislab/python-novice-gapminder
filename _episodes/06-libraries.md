@@ -7,8 +7,8 @@ questions:
 - "How can I find out what that software does?"
 objectives:
 - "Explain what software libraries are and why programmers create and use them."
-- "Write programs that import and use libraries from Python's standard library."
-- "Find and read documentation for standard libraries interactively (in the interpreter) and online."
+- "Write programs that import and use modules from Python's standard library."
+- "Find and read documentation for the standard library interactively (in the interpreter) and online."
 keypoints:
 - "Most of the power of a programming language is in its libraries."
 - "A program must import a library module in order to use it."
@@ -126,7 +126,7 @@ cos(pi) is -1.0
 {: .output}
 
 *   Commonly used for libraries that are frequently used or have long names.
-    *   E.g., `matplotlib` plotting library is often aliased as `mpl`.
+    *   E.g., the `matplotlib` plotting library is often aliased as `mpl`.
 *   But can make programs harder to understand,
     since readers must learn your program's aliases.
 
@@ -146,7 +146,6 @@ cos(pi) is -1.0
 > >    Also, the design of Python's `math` library has its origin in the C standard,
 > >    which includes both `sqrt(x)` and `pow(x,y)`, so a little bit of the history
 > >    of programming is showing in Python's function names.
-> >
 > {: .solution}
 {: .challenge}
 
@@ -200,7 +199,7 @@ cos(pi) is -1.0
 > > {: .language-python}
 > >
 > > Note that this function returns a list of values. We will learn about
-> > lists in [episode 11]({% link _episodes/11-lists.md %}).
+> > lists in [episode 11]({{ page.root }}/11-lists/).
 > >
 > > There's also other functions you could use, but with more convoluted
 > > code as a result.
@@ -235,7 +234,6 @@ cos(pi) is -1.0
 > > print("random base", bases[idx], "base index", idx)
 > > ~~~
 > > {: .language-python}
-> >
 > {: .solution}
 {: .challenge}
 

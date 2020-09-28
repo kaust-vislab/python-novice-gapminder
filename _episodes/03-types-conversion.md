@@ -269,7 +269,6 @@ first is 2 and second is 5
 > > 4. This will vary! How do you define a specimen's age? whole days since collection (integer)? date and time (string)?
 > > 5. Choose floating point to represent population as large aggregates (eg millions), or integer to represent population in units of individuals.
 > > 6. Floating point number, since an average is likely to have a fractional part.
-> >
 > > {: .output}
 > {: .solution}
 {: .challenge}
@@ -311,12 +310,14 @@ first is 2 and second is 5
 >
 > > ## Solution
 > > We want the minimum number of surveys that reaches everyone once, which is
-> > the rounded up value of `num_subjects / num_per_survey`. This is 
-> > equivalent to performing an integer division with `//` and adding 1.
+> > the rounded up value of `num_subjects/ num_per_survey`. This is 
+> > equivalent to performing a floor division with `//` and adding 1. Before
+> > the division we need to subtract 1 from the number of subjects to deal with 
+> > the case where `num_subjects` is evenly divisible by `num_per_survey`.
 > > ~~~
 > > num_subjects = 600
 > > num_per_survey = 42
-> > num_surveys = num_subjects // num_per_survey + 1
+> > num_surveys = (num_subjects - 1) // num_per_survey + 1
 > >
 > > print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys)
 > > ~~~
@@ -428,7 +429,7 @@ first is 2 and second is 5
 >
 > Python provides complex numbers,
 > which are written as `1.0+2.0j`.
-> If `val` is an imaginary number,
+> If `val` is a complex number,
 > its real and imaginary parts can be accessed using *dot notation*
 > as `val.real` and `val.imag`.
 >

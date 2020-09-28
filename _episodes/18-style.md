@@ -12,7 +12,7 @@ objectives:
 - "Use Python community coding standards (PEP-8)."
 keypoints:
 - "Follow standard Python style in your code."
-- "Use docstrings to provide online help."
+- "Use docstrings to provide builtin help."
 ---
 
 ## Coding style
@@ -41,6 +41,7 @@ We may highlight some points:
 *   [Google style guide on Python](https://google.github.io/styleguide/pyguide.html) 
     supports the use of PEP8 and extend the coding style to more specific structure of 
     a Python code, which may be interesting also to follow.
+    Google's [formatting application is called "yapf"](https://github.com/google/yapf/).
 
 ## Use assertions to check for internal errors.
 
@@ -56,11 +57,11 @@ def calc_bulk_density(mass, volume):
 
 If the assertion is `False`, the Python interpreter raises an `AssertionError` runtime exception. The source code for the expression that failed will be displayed as part of the error message. To ignore assertions in your code run the interpreter with the '-O' (optimize) switch. Assertions should contain only simple checks and never change the state of the program. For example, an assertion should never contain an assignment.
 
-## Use docstrings to provide online help.
+## Use docstrings to provide builtin help.
 
 *   If the first thing in a function is a character string
-    that is not assigned to a variable,
-    Python attaches it to the function as the online help.
+    that is not assigned directly to a variable,
+    Python attaches it to the function as the builtin help variable.
 *   Called a *docstring* (short for "documentation string").
 
 ~~~
@@ -109,7 +110,7 @@ average(values)
 >
 > def overall_max(sequences):
 >     '''Determine overall maximum edit distance.'''
->
+> 
 >     highest = 0
 >     for left in sequences:
 >         for right in sequences:
@@ -117,7 +118,7 @@ average(values)
 >             if left != right:
 >                 this = edit_distance(left, right)
 >                 highest = max(highest, this)
->
+> 
 >     # Report.
 >     return highest
 > ~~~
@@ -194,20 +195,21 @@ average(values)
 > >     strings for the supplied number of iterations.
 > >     """
 > >     print(input_string)
+> >     input_string_length = len(input_string)
 > >     old = input_string
 > >     for i in range(iterations):
 > >         new = ''
 > >         # iterate through characters in previous string
-> >         for j in range(len(input_string)):
+> >         for j in range(input_string_length):
 > >             left = j-1
-> >             right = (j+1)%len(input_string) # ensure right index wraps around
-> >             if old[left]==old[right]:
+> >             right = (j+1) % input_string_length  # ensure right index wraps around
+> >             if old[left] == old[right]:
 > >                 new += '-'
 > >             else:
 > >                 new += '*'
 > >         print(new)
 > >         # store new string as old
-> >         old = new
+> >         old = new     
 > >
 > > string_machine('et cetera', 10)
 > > ~~~

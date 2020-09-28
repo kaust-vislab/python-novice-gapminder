@@ -35,7 +35,7 @@ between DataFrames.
 
 To access a value at the position `[i,j]` of a DataFrame, we have two options, depending on
 what is the meaning of `i` in use.
-Remember that a DataFrame provides a *index* as a way to identify the rows of the table;
+Remember that a DataFrame provides an *index* as a way to identify the rows of the table;
 a row, then, has a *position* inside the table as well as a *label*, which
 uniquely identifies its *entry* in the DataFrame.
 
@@ -112,7 +112,7 @@ Name: gdpPercap_1952, dtype: float64
 {: .output}
 
 *   Would get the same result printing `data["gdpPercap_1952"]`
-*   Also get the same result printing `data.gdpPercap_1952` (since it's a column name)
+*   Also get the same result printing `data.gdpPercap_1952` (not recommended, because easily confused with `.` notation for methods)
 
 ## Select multiple columns or rows using `DataFrame.loc` and a named slice.
 
@@ -366,7 +366,6 @@ data.groupby(wealth_score).sum()
 > print(df.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
 > ~~~
 > {: .language-python}
-> 
 {: .challenge}
 > 
 > > ## Solution

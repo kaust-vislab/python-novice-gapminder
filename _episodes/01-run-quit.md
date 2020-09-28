@@ -52,6 +52,10 @@ and even custom components in a flexible, integrated, and extensible manner. Jup
 reasonably up-to-date browser (ideally a current version of Chrome, Safari, or Firefox); Internet
 Explorer versions 9 and below are *not* supported.
 
+JupyterLab is included as part of the Anaconda Python distribution. If you have not already 
+installed the Anaconda Python distribution, see [the setup instructions]({{ page.root }}/setup/) 
+for installation instructions.
+
 Even though JupyterLab is a web-based application, JupyterLab runs locally on your machine and 
 does not require an internet connection.
 *   The JupyterLab server sends messages to your web browser.
@@ -65,10 +69,9 @@ does not require an internet connection.
 > If you have prior experience working with Jupyter notebooks, then you will have a a good idea of 
 > what to expect from JupyterLab. 
 > 
-> Experienced users of Jupyter notebooks interested in a more detailed discussion of the 
-> similarities and differences between the JupyterLab and Jupyter notebook user interfaces can 
-> find more information in the [JupyterLab user interface documentation][jupyterlab-ui].
->
+> Experienced users of Jupyter notebooks interested in a more detailed discussion of the similarities and differences
+> between the JupyterLab and Jupyter notebook user interfaces can find more information in the 
+> [JupyterLab user interface documentation][jupyterlab-ui].
 {: .callout}
 
 ## Starting JupyterLab
@@ -111,7 +114,7 @@ menus are included by default.
 *   **View:** Actions that alter the appearance of JupyterLab.
 *   **Run:** Actions for running code in different activities such as notebooks and code consoles (discussed below).
 *   **Kernel:** Actions for managing kernels which, as mentioned above, are separate processes for running code.
-*   **Tabs:** A list of the open documents and activities in the dock panel.
+*   **Tabs:** A list of the open documents and activities in the main work area.
 *   **Settings:** Common JupyterLab settings can be configured using this menu. There is also an *Advanced Settings Editor* option in the dropdown menu that provides more fine-grained control of JupyterLab settings and configuration options.
 *   **Help:** A list of JupyterLab and kernel help links.
 
@@ -190,9 +193,9 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 >    <img alt="Multi-panel JupyterLab" src="../fig/0_multipanel_jupyterlab_screenshot.png" width="750"/>
 > </p>
 >
-> First, create a text file, Python console, and terminal window and arrange then into three 
+> First, create a text file, Python console, and terminal window and arrange them into three 
 > panels in the main work area. Next, create a notebook, terminal window, and text file and 
-> arrange then into three panels in the main work area. Finally, create your own combination of 
+> arrange them into three panels in the main work area. Finally, create your own combination of 
 > panels and tabs. What combination of panels and tabs do you think will be most useful for your 
 > workflow?
 >
@@ -201,7 +204,6 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 > > After creating the necessary tabs, you can drag one of the tabs to the center of a panel to 
 > > move the tab to the panel; next you can subdivide a tab panel by dragging a tab to the left, 
 > > right, top, or bottom of the panel.
-> >
 > {: .solution}
 {: .challenge}
 
@@ -253,7 +255,6 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 > > You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>b</kbd> or <kbd>a</kbd>.
 > > You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>x</kbd>.
 > > You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>z</kbd>.
-> >
 > {: .solution}
 {: .challenge}
 
@@ -286,36 +287,45 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 
 <div class="row">
   <div class="col-md-6" markdown="1">
+    
 ~~~
 *   Use asterisks
 *   to create
 *   bullet lists.
 ~~~
+
   </div>
   <div class="col-md-6" markdown="1">
+  
 *   Use asterisks
 *   to create
 *   bullet lists.
+
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6" markdown="1">
+    
 ~~~
 1.  Use numbers
 1.  to create
 1.  numbered lists.
 ~~~
+
   </div>
   <div class="col-md-6" markdown="1">
+
 1.  Use numbers
 1.  to create
 1.  numbered lists.
+
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6" markdown="1">
+    
 ~~~
 *  You can use indents
 	*  To create sublists 
@@ -324,41 +334,53 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 	1. Of different
 	1. types
 ~~~
+
   </div>
   <div class="col-md-6" markdown="1">
+  
 *  You can use indents
 	*  To create sublists
 	*  of the same type
 *  Or sublists
 	1. Of different
 	1. types
+  
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6" markdown="1">
+    
 ~~~
 # A Level-1 Heading
 ~~~
+
   </div>
   <div class="col-md-6" markdown="1">
+  
 # A Level-1 Heading
+
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6" markdown="1">
+    
 ~~~
 ## A Level-2 Heading (etc.)
 ~~~
+
   </div>
   <div class="col-md-6" markdown="1">
+  
 ## A Level-2 Heading (etc.)
+
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6" markdown="1">
+    
 ~~~
 Line breaks
 don't matter.
@@ -366,30 +388,37 @@ don't matter.
 But blank lines
 create new paragraphs.
 ~~~
+
   </div>
-<div class="col-md-6" markdown="1">
+  <div class="col-md-6" markdown="1">
+  
 Line breaks
 don't matter.
 
 But blank lines
 create new paragraphs.
+
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6" markdown="1">
+    
 ~~~
 [Create links](http://software-carpentry.org) with `[...](...)`.
 Or use [named links][data_carpentry].
 
 [data_carpentry]: http://datacarpentry.org
 ~~~
+
   </div>
   <div class="col-md-6" markdown="1">
+  
 [Create links](http://software-carpentry.org) with `[...](...)`.
 Or use [named links][data_carpentry].
 
 [data_carpentry]: http://datacarpentry.org
+
   </div>
 </div>
 
@@ -493,7 +522,7 @@ Or use [named links][data_carpentry].
 > > The notebook shows the equation as it would be rendered from LaTeX equation syntax.
 > > The dollar sign, `$`, is used to tell Markdown that the text in between is a LaTeX equation.
 > > If you're not familiar with LaTeX,  underscore, `_`, is used for subscripts and circumflex, `^`, is used for superscripts.
-> > A pair of curly braces, `{` and `}`, is used to group text together so that the statement `i=1` becomes the the subscript and `N` becomes the superscript.
+> > A pair of curly braces, `{` and `}`, is used to group text together so that the statement `i=1` becomes the subscript and `N` becomes the superscript.
 > > Similarly, `-i` is in curly braces to make the whole statement the superscript for `2`.
 > > `\sum` and `\approx` are LaTeX commands for "sum over" and "approximate" symbols. 
 > {: .solution}
@@ -511,7 +540,6 @@ $ jupyter lab
 > ## Closing JupyerLab
 >
 > Practice closing and restarting the JupyterLab server.
-> 
 {: .challenge}
 [anaconda]: https://docs.continuum.io/anaconda/install
 [jupyterlab-ui]: https://jupyterlab.readthedocs.io/en/stable/user/interface.html

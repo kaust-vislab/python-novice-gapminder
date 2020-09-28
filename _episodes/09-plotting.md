@@ -51,8 +51,15 @@ import pandas as pd
 data = pd.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
 
 # Extract year from last 4 characters of each column name
+# The current column names are structured as 'gdpPercap_(year)', 
+# so we want to keep the (year) part only for clarity when plotting GDP vs. years
+# To do this we use strip(), which removes from the string the characters stated in the argument
+# This method works on strings, so we call str before strip()
+
 years = data.columns.str.strip('gdpPercap_')
+
 # Convert year values to integers, saving results back to dataframe
+
 data.columns = years.astype(int)
 
 data.loc['Australia'].plot()
@@ -87,7 +94,7 @@ plt.ylabel('GDP per capita')
 
 ## Data can also be plotted by calling the `matplotlib` `plot` function directly.
 *   The command is `plt.plot(x, y)`
-*   The color / format of markers can also be specified as an optical argument: e.g. 'b-' is a blue line, 'g--' is a green dashed line.
+*   The color and format of markers can also be specified as an additional optional argument e.g., `b-` is a blue line, `g--` is a green dashed line.
 
 ## Get Australia data from dataframe
 
@@ -142,7 +149,6 @@ plt.ylabel('GDP per capita ($)')
 > By default matplotlib will attempt to place the legend in a suitable position. If you
 > would rather specify a position this can be done with the `loc=` argument, e.g to place
 > the legend in the upper left corner of the plot, specify `loc='upper left'`
->
 > {: .language-python}
 {: .callout}
 
@@ -212,7 +218,6 @@ data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 > >
 > > No particular correlations can be seen between the minimum and maximum gdp values
 > > year on year. It seems the fortunes of asian countries do not rise and fall together.
-> >
 > {: .solution}
 >
 > You might note that the variability in the maximum is much higher than
@@ -233,7 +238,6 @@ data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 > > maybe the Brent crude index would make an interesting comparison?
 > > Whilst Myanmar consistently has the lowest gdp, the highest gdb nation has varied
 > > more notably.
-> >
 > {: .solution}
 {: .challenge}
 
@@ -267,7 +271,6 @@ data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 > > s - Details for this can be found in the documentation of plt.scatter.
 > > A single number or one value for each data point. Determines the size
 > > of the plotted points.
-> >
 > {: .solution}
 {: .challenge}
 

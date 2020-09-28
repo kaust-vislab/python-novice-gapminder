@@ -36,6 +36,7 @@ first_name = 'Ahmed'
 *   Variable names
     * can **only** contain letters, digits, and underscore `_` (typically used to separate words in long variable names)
     * cannot start with a digit
+    * are **case sensitive** (age, Age and AGE are three different variables)
 *   Variable names that start with underscores like `__alistairs_real_age` have a special meaning
     so we won't do that until we understand the convention.
 
@@ -129,6 +130,8 @@ Age in three years: 45
 *   Indices are numbered from 0.
 *   Use the position's index in square brackets to get the character at that
     position.
+    
+![an illustration of indexing](../fig/2_indexing.svg)
 
 ~~~
 atom_name = 'helium'
@@ -286,7 +289,7 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 > > ~~~
 > > {: .language-python}
 > > ~~~
-> > 1
+> > 2
 > > ~~~
 > > {: .output}
 > {: .solution}
@@ -346,6 +349,5 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 > > 4. `thing[:]` returns all of `thing`
 > > 5. `thing[number:some-negative-number]` returns a slice from `number` to `some-negative-number` values from the end of `thing`
 > > 6. If a part of the slice is out of range, the operation does not fail. `atom_name[0:15]` gives the same result as `atom_name[0:]`.
-> >
 > {: .solution}
 {: .challenge}
